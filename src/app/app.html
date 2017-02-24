@@ -1,0 +1,17 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose (click)="openHomePage()">Home</button>
+      <button ion-item menuClose (click)="openUsersPage()">Users</button>
+      <button ion-item menuClose (click)="openHeroresPage()">Heroes</button>
+      <button ion-item menuClose (click)="openSpeakersPage()">Speakers</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>
