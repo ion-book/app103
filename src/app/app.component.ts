@@ -7,6 +7,8 @@ import { UsersPage } from '../pages/users/users';
 import { HeroesPage } from '../pages/heroes/heroes';
 import { SpeakersPage } from '../pages/speakers/speakers';
 
+import { InitPage } from '../pages/init/init';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,6 +16,11 @@ import { SpeakersPage } from '../pages/speakers/speakers';
 export class MyApp {
 
   pages: any[] = [
+    {
+      title: 'Init',
+      component: InitPage,
+      icon: 'home'
+    },
     {
       title: 'Home',
       component: HomePage,
@@ -38,6 +45,11 @@ export class MyApp {
 
   pagesHeroes: any[] = [
     {
+      title: 'Init',
+      component: InitPage,
+      icon: 'home'
+    },
+    {
       title: 'Home',
       component: HomePage,
       icon: 'home'
@@ -49,7 +61,7 @@ export class MyApp {
     },
   ];
 
-  rootPage: any = HomePage;
+  rootPage: any = InitPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
