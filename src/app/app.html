@@ -1,15 +1,31 @@
-<ion-menu [content]="content">
+<ion-menu id="menu" [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title>pages</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item menuClose (click)="openHomePage()">Home</button>
-      <button ion-item menuClose (click)="openUsersPage()">Users</button>
-      <button ion-item menuClose (click)="openHeroresPage()">Heroes</button>
-      <button ion-item menuClose (click)="openSpeakersPage()">Speakers</button>
+      <button icon-left *ngFor="let page of pages" ion-item menuClose (click)="openPage( page )">
+        <ion-icon [name]="page.icon"></ion-icon>
+        {{ page.title }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="right" id="menuHeroes" [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>heroes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button icon-left *ngFor="let page of pagesHeroes" ion-item menuClose (click)="openPage( page )">
+        <ion-icon [name]="page.icon"></ion-icon>
+        {{ page.title }}
+      </button>
     </ion-list>
   </ion-content>
 </ion-menu>

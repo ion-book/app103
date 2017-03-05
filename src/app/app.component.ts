@@ -12,6 +12,43 @@ import { SpeakersPage } from '../pages/speakers/speakers';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+  pages: any[] = [
+    {
+      title: 'Home',
+      component: HomePage,
+      icon: 'home'
+    },
+    {
+      title: 'Users',
+      component: UsersPage,
+      icon: 'people'
+    },
+    {
+      title: 'Speakers',
+      component: SpeakersPage,
+      icon: 'beer'
+    },
+    {
+      title: 'Heroes',
+      component: HeroesPage,
+      icon: 'logo-angular'
+    }
+  ];
+
+  pagesHeroes: any[] = [
+    {
+      title: 'Home',
+      component: HomePage,
+      icon: 'home'
+    },
+    {
+      title: 'Users',
+      component: UsersPage,
+      icon: 'people'
+    },
+  ];
+
   rootPage: any = HomePage;
 
   constructor(platform: Platform) {
@@ -23,19 +60,7 @@ export class MyApp {
     });
   }
 
-  openUsersPage(){
-    this.rootPage = UsersPage;
-  }
-
-  openHomePage(){
-    this.rootPage = HomePage;
-  }
-
-  openSpeakersPage(){
-    this.rootPage = SpeakersPage;
-  }
-
-  openHeroresPage(){
-    this.rootPage = HeroesPage;
+  openPage( page ){
+    this.rootPage = page.component;
   }
 }
